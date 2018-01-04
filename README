@@ -67,7 +67,7 @@ Resume resumes a container, setting all of its processes back to a runnable stat
 Info provides information about the currently running containers, including the 
 consumption of a given process for a particular container. 
 
-## Process Isolation:
+##Process Isolation:
 In this project, we needed to make sure that the processes were isolated from each other.
 However, we also needed to make sure that the root console was able to access everything.
 To achieve Process Isolation, we added a pointer to the current container struct inside of
@@ -79,7 +79,7 @@ container, or the root. If it was the root, we execute like normal, and if it wa
 we had to make sure it only performed actions on its own processes and return if it wasnt 
 able to.
 
-## File Isolation:
+##File Isolation:
 
 File Isolation was was achieved by manipulating inodes and the namex function. To start, we 
 added a pointer to the inode of the containers directory and set it when we started a container.
